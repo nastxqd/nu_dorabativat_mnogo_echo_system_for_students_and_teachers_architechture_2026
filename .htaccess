@@ -1,0 +1,21 @@
+RewriteEngine On
+
+# Перенаправляем API запросы
+RewriteRule ^api/(.*)$ api/index.php [QSA,L]
+
+# Если файл или папка существуют, не перенаправляем
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Все остальные запросы на index.html
+RewriteRule ^ index.html [QSA,L]RewriteEngine On
+
+# Перенаправляем API запросы
+RewriteRule ^api/(.*)$ api/index.php [QSA,L]
+
+# Если файл или папка существуют, не перенаправляем
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Все остальные запросы на index.html
+RewriteRule ^ index.html [QSA,L]
